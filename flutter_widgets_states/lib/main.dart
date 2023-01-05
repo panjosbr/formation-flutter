@@ -15,21 +15,93 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-          ),
-          Container(
-            color: Colors.blueAccent,
-            width: 50,
-            height: 50,
-          ),
-        ],
-      ),
+      home: _screen(),
+    );
+  }
+
+  Widget _screen() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        _stack(),
+        _stack(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              color: Colors.cyan,
+              width: 50,
+              height: 50,
+            ),
+            Container(
+              color: Colors.blueAccent,
+              width: 50,
+              height: 50,
+            ),
+            Container(
+              color: Colors.red,
+              width: 50,
+              height: 50,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _row() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          color: Colors.red,
+          width: 100,
+          height: 100,
+        ),
+        Container(
+          color: Colors.blueAccent,
+          width: 50,
+          height: 50,
+        ),
+      ],
+    );
+  }
+
+  Widget _col() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Container(
+          color: Colors.red,
+          width: 100,
+          height: 100,
+        ),
+        Container(
+          color: Colors.blueAccent,
+          width: 50,
+          height: 50,
+        ),
+      ],
+    );
+  }
+
+  Widget _stack() {
+    return Stack(
+      alignment: AlignmentDirectional.center,
+      children: [
+        Container(
+          color: Colors.red,
+          width: 100,
+          height: 100,
+        ),
+        Container(
+          color: Colors.blueAccent,
+          width: 50,
+          height: 50,
+        ),
+      ],
     );
   }
 }
