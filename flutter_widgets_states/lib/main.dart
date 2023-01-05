@@ -19,6 +19,22 @@ class MyApp extends StatelessWidget {
     );
   }
 
+  Widget _elevatedButton() {
+    return ElevatedButton(onPressed: (){}, child: Text('Salvar'));
+  }
+
+  Widget _text(String text, Color color) {
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 20,
+        color: color,
+        decoration: TextDecoration.none,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+
   Widget _screen() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -39,13 +55,9 @@ class MyApp extends StatelessWidget {
               width: 50,
               height: 50,
             ),
-            Container(
-              color: Colors.red,
-              width: 50,
-              height: 50,
-            ),
           ],
         ),
+        _elevatedButton(),
       ],
     );
   }
