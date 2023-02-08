@@ -21,14 +21,20 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Tarefas'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: ListView(
           children: [
+            TaskWidget(
+              nome:
+                  'Aprender Flutter Aprender Flutter Aprender Flutter Aprender Flutter Aprender Flutter',
+            ),
             TaskWidget(
               nome: 'Aprender Flutter',
             ),
             TaskWidget(
-              nome: 'Aprender Violão',
+              nome: 'Aprender Flutter',
+            ),
+            TaskWidget(
+              nome: 'Aprender Flutter',
             ),
           ],
         ),
