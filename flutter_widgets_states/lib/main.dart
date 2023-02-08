@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/task.widget.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: Container(),
+        appBar: AppBar(
+          title: const Text('Tarefas'),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TaskWidget(
+              nome: 'Aprender Flutter',
+            ),
+            TaskWidget(
+              nome: 'Aprender Violão',
+            ),
+          ],
+        ),
       ),
     );
   }
