@@ -19,22 +19,24 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          leading: Container(),
           title: const Text('Tarefas'),
         ),
         body: ListView(
           children: [
             TaskWidget(
-              nome:
-                  'Aprender Flutter Aprender Flutter Aprender Flutter Aprender Flutter Aprender Flutter',
+              nome: 'Aprender Flutter Aprender',
+              url:
+                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
             ),
             TaskWidget(
-              nome: 'Aprender Flutter',
+              nome: 'Ler',
+              url:
+                  'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
             ),
             TaskWidget(
-              nome: 'Aprender Flutter',
-            ),
-            TaskWidget(
-              nome: 'Aprender Flutter',
+              nome: 'Jogar',
+              url: 'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
             ),
           ],
         ),
