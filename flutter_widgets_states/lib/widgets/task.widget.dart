@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets_states/widgets/difficulty.widget.dart';
 
 class TaskWidget extends StatefulWidget {
   final String nome;
@@ -21,10 +22,6 @@ class _TaskWidgetState extends State<TaskWidget> {
 
   double validarDificuldade() {
     return (widget.dificuldade > 0) ? (nivel / widget.dificuldade) / 10 : 1;
-  }
-
-  Color getColor(int number) {
-    return widget.dificuldade >= number ? Colors.blue : Colors.blue.shade100;
   }
 
   @override
@@ -81,35 +78,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                             ),
                           ),
                         ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.star,
-                              size: 15,
-                              color: getColor(1),
-                            ),
-                            Icon(
-                              Icons.star,
-                              size: 15,
-                              color: getColor(2),
-                            ),
-                            Icon(
-                              Icons.star,
-                              size: 15,
-                              color: getColor(3),
-                            ),
-                            Icon(
-                              Icons.star,
-                              size: 15,
-                              color: getColor(4),
-                            ),
-                            Icon(
-                              Icons.star,
-                              size: 15,
-                              color: getColor(5),
-                            ),
-                          ],
-                        ),
+                        DifficultyWidget(dificuldade: 2),
                       ],
                     ),
                     SizedBox(
