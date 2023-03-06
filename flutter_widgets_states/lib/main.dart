@@ -25,18 +25,19 @@ class MyApp extends StatelessWidget {
         body: ListView(
           children: [
             TaskWidget(
-              nome: 'Aprender Flutter Aprender',
-              url:
-                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+              'Aprender Flutter Aprender',
+              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+              5,
             ),
             TaskWidget(
-              nome: 'Ler',
-              url:
-                  'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+              'Ler',
+              'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+              3,
             ),
             TaskWidget(
-              nome: 'Jogar',
-              url: 'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
+              'Jogar',
+              'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
+              1,
             ),
           ],
         ),
