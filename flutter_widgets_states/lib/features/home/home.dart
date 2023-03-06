@@ -27,19 +27,32 @@ class _HomePageState extends State<HomePage> {
           children: const [
             TaskWidget(
               'Aprender Flutter Aprender',
-              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+              'lib/assets/images/twitter.png',
               5,
             ),
             TaskWidget(
               'Ler',
-              'https://thebogotapost.com/wp-content/uploads/2017/06/636052464065850579-137719760_flyer-image-1.jpg',
+              'lib/assets/images/livro.jpg',
               3,
             ),
             TaskWidget(
               'Jogar',
-              'https://i.ibb.co/tB29PZB/kako-epifania-2022-2-c-pia.jpg',
+              'lib/assets/images/randon.jpg',
+              4,
+            ),
+            TaskWidget(
+              'Jogar',
+              'lib/assets/images/livro.jpg',
               1,
             ),
+            TaskWidget(
+              'Jogar',
+              'lib/assets/images/twitter.png',
+              2,
+            ),
+            SizedBox(
+              height: 60,
+            )
           ],
         ),
       ),

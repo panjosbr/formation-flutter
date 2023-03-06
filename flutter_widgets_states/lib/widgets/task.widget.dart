@@ -57,7 +57,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                       height: 100,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4),
-                        child: Image.network(
+                        child: Image.asset(
                           widget.url,
                           fit: BoxFit.fill,
                         ),
