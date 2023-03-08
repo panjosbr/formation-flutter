@@ -21,7 +21,7 @@ class _FormScreenState extends State<FormScreen> {
       key: _formKey,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Nova Tarefa'),
+          title: const Text('Nova Tarefa'),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -48,7 +48,7 @@ class _FormScreenState extends State<FormScreen> {
                       },
                       controller: nameController,
                       textAlign: TextAlign.center,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Nome',
                         fillColor: Colors.white70,
@@ -70,7 +70,7 @@ class _FormScreenState extends State<FormScreen> {
                       controller: difficultyController,
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.center,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Dificuldade',
                         fillColor: Colors.white70,
@@ -93,7 +93,7 @@ class _FormScreenState extends State<FormScreen> {
                       controller: imageController,
                       keyboardType: TextInputType.url,
                       textAlign: TextAlign.center,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Imagem',
                         fillColor: Colors.white70,
@@ -138,13 +138,14 @@ class _FormScreenState extends State<FormScreen> {
                         print(difficultyController.text);
                         print(imageController.text);
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text('Salvando nova tarefa'),
                           ),
                         );
+                        Navigator.pop(context);
                       }
                     },
-                    child: Text('Adicionar!'),
+                    child: const Text('Adicionar!'),
                   ),
                 ],
               ),
