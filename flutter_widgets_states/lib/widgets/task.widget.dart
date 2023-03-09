@@ -6,24 +6,26 @@ class TaskWidget extends StatefulWidget {
   final String url;
   final int dificuldade;
 
-  const TaskWidget(
+  TaskWidget(
     this.nome,
     this.url,
     this.dificuldade, {
     Key? key,
   }) : super(key: key);
 
+  int nivel = 0;
+
   @override
   State<TaskWidget> createState() => _TaskWidgetState();
 }
 
 class _TaskWidgetState extends State<TaskWidget> {
-  int nivel = 0;
-
   bool get assetOrNetwork => widget.url.contains('http');
 
   double validarDificuldade() {
-    return (widget.dificuldade > 0) ? (nivel / widget.dificuldade) / 10 : 1;
+    return (widget.dificuldade > 0)
+        ? (widget.nivel / widget.dificuldade) / 10
+        : 1;
   }
 
   @override
@@ -94,17 +96,17 @@ class _TaskWidgetState extends State<TaskWidget> {
                       child: ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            nivel++;
+                            widget.nivel++;
                           });
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               Icons.arrow_drop_up,
                             ),
-                            const Text(
+                            Text(
                               'UP',
                               style: TextStyle(
                                 fontSize: 12,
@@ -130,7 +132,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                   Padding(
                     padding: EdgeInsets.all(12),
                     child: Text(
-                      'Nível: $nivel',
+                      'Nível: ${widget.nivel}',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,
