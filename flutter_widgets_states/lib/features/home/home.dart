@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_widgets_states/data/task_inherited.dart';
 import 'package:flutter_widgets_states/features/home/form.dart';
 import 'package:flutter_widgets_states/widgets/task.widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  bool opacity = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,33 +21,20 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Tarefas'),
       ),
       body: ListView(
-        children: const [
-          TaskWidget(
-            'Aprender Flutter Aprender',
-            'lib/assets/images/twitter.png',
-            5,
-          ),
-          TaskWidget(
-            'Ler',
-            'lib/assets/images/livro.jpg',
-            3,
-          ),
-          TaskWidget(
-            'Jogar',
-            'lib/assets/images/randon.jpg',
-            1,
-          ),
-          SizedBox(
-            height: 60,
-          )
-        ],
+        padding: const EdgeInsets.only(
+          top: 8,
+          bottom: 70,
+        ),
+        children: TaskInherited.of(context).taskList,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (BuildContext context) => const FormScreen(),
+                builder: (BuildContext newContext) => FormScreen(
+                  taskContext: context,
+                ),
               ));
         },
         child: const Icon(Icons.add),

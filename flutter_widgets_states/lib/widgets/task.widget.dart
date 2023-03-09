@@ -20,6 +20,8 @@ class TaskWidget extends StatefulWidget {
 class _TaskWidgetState extends State<TaskWidget> {
   int nivel = 0;
 
+  bool get assetOrNetwork => widget.url.contains('http');
+
   double validarDificuldade() {
     return (widget.dificuldade > 0) ? (nivel / widget.dificuldade) / 10 : 1;
   }
@@ -57,10 +59,15 @@ class _TaskWidgetState extends State<TaskWidget> {
                       height: 100,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(4),
-                        child: Image.asset(
-                          widget.url,
-                          fit: BoxFit.fill,
-                        ),
+                        child: assetOrNetwork
+                            ? Image.network(
+                                widget.url,
+                                fit: BoxFit.fill,
+                              )
+                            : Image.asset(
+                                widget.url,
+                                fit: BoxFit.fill,
+                              ),
                       ),
                     ),
                     Column(
