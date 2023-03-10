@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                 builder: (BuildContext newContext) => FormScreen(
                   taskContext: context,
                 ),
-              ));
+              )).then((value) => setState(() {}));
         },
         child: const Icon(Icons.add),
       ),
