@@ -96,9 +96,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                       width: 52,
                       child: ElevatedButton(
                         onLongPress: () {
-                          setState(() {
-                            TaskDao().delete(widget.nome);
-                          });
+                          TaskDao().delete(widget.nome);
                         },
                         onPressed: () {
                           setState(() {
