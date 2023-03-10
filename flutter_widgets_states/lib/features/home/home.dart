@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_widgets_states/data/task_inherited.dart';
+import 'package:flutter_widgets_states/data/task.dao.dart';
 import 'package:flutter_widgets_states/features/home/form.dart';
+import 'package:flutter_widgets_states/widgets/loading.widget.dart';
 import 'package:flutter_widgets_states/widgets/task.widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,14 +17,66 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: Container(),
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {});
+            },
+            icon: const Icon(Icons.refresh),
+          ),
+        ],
         title: const Text('Tarefas'),
       ),
-      body: ListView(
+      body: Padding(
         padding: const EdgeInsets.only(
           top: 8,
           bottom: 70,
         ),
-        children: TaskInherited.of(context).taskList,
+        child: FutureBuilder<List<TaskWidget>>(
+          future: TaskDao().findAll(),
+          builder: (context, snapshot) {
+            List<TaskWidget>? items = snapshot.data;
+            switch (snapshot.connectionState) {
+              case ConnectionState.none:
+                return const LoadingWidget();
+              case ConnectionState.waiting:
+                return const LoadingWidget();
+              case ConnectionState.active:
+                return const LoadingWidget();
+              case ConnectionState.done:
+                if (snapshot.hasData && items != null) {
+                  if (items.isNotEmpty) {
+                    return ListView.builder(
+                      itemCount: items.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final TaskWidget task = items[index];
+                        return task;
+                      },
+                    );
+                  }
+
+                  return Center(
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.error_outline,
+                          size: 128,
+                        ),
+                        Text(
+                          'Não há nenhuma tarefa,',
+                          style: TextStyle(
+                            fontSize: 32,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+                return Text('Erro ao carregar tarefas');
+            }
+            return Text('Erro desconhecido');
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -35,7 +86,11 @@ class _HomePageState extends State<HomePage> {
                 builder: (BuildContext newContext) => FormScreen(
                   taskContext: context,
                 ),
-              )).then((value) => setState(() {}));
+              )).then(
+            (value) => setState(() {
+              print('recarregando tela inicial');
+            }),
+          );
         },
         child: const Icon(Icons.add),
       ),

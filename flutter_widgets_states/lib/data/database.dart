@@ -2,8 +2,9 @@ import 'package:flutter_widgets_states/data/task.dao.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-Future<Database> getDataBase() async {
-  final String path = join(await getDatabasesPath(), 'task.db');
+Future<Database> getDatabase() async {
+  print('abrindo db');
+  final String path = join(await getDatabasesPath(), 'taskTable.db');
   return openDatabase(
     path,
     onCreate: (db, version) {

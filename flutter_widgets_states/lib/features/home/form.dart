@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_widgets_states/data/task.dao.dart';
 import 'package:flutter_widgets_states/data/task_inherited.dart';
+import 'package:flutter_widgets_states/widgets/task.widget.dart';
 
 class FormScreen extends StatefulWidget {
   const FormScreen({
@@ -150,13 +152,12 @@ class _FormScreenState extends State<FormScreen> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // print(nameController.text);
-                        // print(difficultyController.text);
-                        // print(imageController.text);
-                        TaskInherited.of(widget.taskContext).newTask(
-                          nameController.text,
-                          imageController.text,
-                          int.parse(difficultyController.text),
+                        TaskDao().save(
+                          TaskWidget(
+                            nameController.text,
+                            imageController.text,
+                            int.parse(difficultyController.text),
+                          ),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
