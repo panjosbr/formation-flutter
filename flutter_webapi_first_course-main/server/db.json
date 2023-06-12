@@ -1,5 +1,19 @@
 {
   "learnhttp": {
     "content": "Hello World!"
-  }
+  },
+  "journals": [
+    {
+      "id": "be1aa3a0-094e-11ee-976f-e740f5a60e97",
+      "content": "hoje e sexta",
+      "createdAt": "2023-06-02 15:26:54.197",
+      "updatedAt": "2023-06-02 15:26:54.197"
+    },
+    {
+      "id": "58965e60-094f-11ee-9d86-f974b76c8931",
+      "content": "hoje e sexta",
+      "createdAt": "2023-06-02 15:31:25.591",
+      "updatedAt": "2023-06-02 15:31:25.591"
+    }
+  ]
 }
