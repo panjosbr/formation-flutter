@@ -10,7 +10,7 @@ void main() {
 
   // JournalService service = JournalService();
   // service.register(Journal.empty());
-  // service.get();
+  // service.getAll();
 }
 
 class MyApp extends StatelessWidget {
