@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_webapi_first_course/helpers/weekday.dart';
 import 'package:flutter_webapi_first_course/models/journal.dart';
 import 'package:flutter_webapi_first_course/services/journal_service.dart';
@@ -19,7 +17,7 @@ class AddJournalScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '${WeekDay(journal.createdAt.weekday).long.toLowerCase()}, ${journal.createdAt.day} | ${journal.createdAt.month} | ${journal.createdAt.year}',
+          WeekDay(journal.createdAt).toString(),
         ),
         actions: [
           IconButton(
@@ -44,11 +42,12 @@ class AddJournalScreen extends StatelessWidget {
     );
   }
 
-  void registerJournal(context) async {
+  void registerJournal(context) {
     String content = _contentController.text;
     journal.content = content;
     JournalService service = JournalService();
-    bool result = await service.register(journal);
-    Navigator.pop(context, result);
+    service.register(journal).then(
+          (value) => Navigator.pop(context, value),
+        );
   }
 }

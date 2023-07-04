@@ -38,6 +38,12 @@
       "content": "dia de jogar",
       "createdAt": "2023-06-30 17:43:13.784",
       "updatedAt": "2023-06-30 17:43:13.784"
+    },
+    {
+      "id": "2aeff800-1ab0-11ee-9cf3-3736111f3576",
+      "content": "finalizando curso de flutter",
+      "createdAt": "2023-07-04 18:17:07.129",
+      "updatedAt": "2023-07-04 18:17:07.129"
     }
   ]
 }
