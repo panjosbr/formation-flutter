@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
 
                   return Center(
                     child: Column(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.error_outline,
                           size: 128,
@@ -72,9 +72,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 }
-                return Text('Erro ao carregar tarefas');
+                return const Text('Erro ao carregar tarefas');
             }
-            return Text('Erro desconhecido');
           },
         ),
       ),

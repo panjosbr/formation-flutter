@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ExampleWidget {
   Widget _elevatedButton() {
-    return ElevatedButton(onPressed: () {}, child: Text('Salvar'));
+    return ElevatedButton(onPressed: () {}, child: const Text('Salvar'));
   }
 
   Widget text(String text, Color color) {

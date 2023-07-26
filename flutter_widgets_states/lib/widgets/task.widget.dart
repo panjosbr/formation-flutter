@@ -134,7 +134,7 @@ class _TaskWidgetState extends State<TaskWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Text(
                       'Nível: ${widget.nivel}',
                       style: const TextStyle(

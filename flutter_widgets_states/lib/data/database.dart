@@ -1,5 +1,5 @@
 import 'package:flutter_widgets_states/data/task.dao.dart';
-import 'package:sqflite_common/sqlite_api.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 // Future<Database> getDatabase() async {
