@@ -104,6 +104,9 @@ class JournalCard extends StatelessWidget {
   }
 
   void callAddJournal(BuildContext context, {Journal? journal}) {
+    Map<String, dynamic> map = {};
+    map['is_editing'] = false;
+
     Journal innerJournal = Journal(
       id: const Uuid().v1(),
       content: '',
@@ -113,11 +116,15 @@ class JournalCard extends StatelessWidget {
 
     if (journal != null) {
       innerJournal = journal;
+      map['is_editing'] = false;
     }
+
+    map['journal'] = innerJournal;
+
     Navigator.pushNamed(
       context,
       'add-journal',
-      arguments: innerJournal,
+      arguments: map,
     ).then((value) {
       refreshFunction();
       if (value != null && value == true) {
