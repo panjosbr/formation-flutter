@@ -1,5 +1,5 @@
 ### rodar json-server apontando pra um json
-json-server --watch --host 192.168.0.65 db.json
+json-server --watch --host 0.0.0.0 db.json
 
 #no powershell - desabilitar politicas que atrapalha o json-server
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted
