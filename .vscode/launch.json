@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flutter_webapi_first_course-main",
+            "cwd": "flutter_webapi_first_course-main",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_webapi_first_course-main (profile mode)",
+            "cwd": "flutter_webapi_first_course-main",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_webapi_first_course-main (release mode)",
+            "cwd": "flutter_webapi_first_course-main",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "flutter_widgets_states",
+            "cwd": "flutter_widgets_states",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "flutter_widgets_states (profile mode)",
+            "cwd": "flutter_widgets_states",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "flutter_widgets_states (release mode)",
+            "cwd": "flutter_widgets_states",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
