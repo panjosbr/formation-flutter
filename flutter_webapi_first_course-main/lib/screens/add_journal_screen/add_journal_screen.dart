@@ -50,11 +50,11 @@ class AddJournalScreen extends StatelessWidget {
     journal.content = content;
     JournalService service = JournalService();
     if (isEditing) {
-      service.register(journal).then(
+      service.edit(journal.id, journal).then(
             (value) => Navigator.pop(context, value),
           );
     } else {
-      service.edit(journal.id, journal).then(
+      service.register(journal).then(
             (value) => Navigator.pop(context, value),
           );
     }
