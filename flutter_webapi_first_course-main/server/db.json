@@ -2,8 +2,6 @@
   "learnhttp": {
     "content": "Hello World!"
   },
-  "journals": [
-    {
-    }
-  ]
+  "users": [],
+  "journals": []
 }
